@@ -1,0 +1,30 @@
+type Product @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+  category: String!
+  sku: String
+  inventory: Int
+}
+
+input ProductInput {
+  id: ID
+  name: String!
+  description: String!
+  price: Float!
+  category: String!
+  sku: String
+  inventory: Int
+}
+
+type Query {
+  getProductById(productId: ID!): Product
+    @aws_api_key @aws_cognito_user_pools
+   listProducts: [Product]
+    @aws_api_key @aws_cognito_user_pools
+}
+
+type Mutation {
+  createProduct(product: ProductInput!): Product
+}
