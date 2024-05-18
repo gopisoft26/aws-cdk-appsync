@@ -10,7 +10,7 @@ constructor(scope: Construct, feature: string, api: appsync.GraphqlApi) {
     super(scope, feature);
    
  const productLambda = new lambda.Function(this, 'AppSyncProductHandler', {
-    runtime: lambda.Runtime.NODEJS_20_X,  // Update to a supported runtime
+    runtime: lambda.Runtime.NODEJS_18_X,  // Update to a supported runtime
     handler: 'main.handler',  // Ensure this matches your Lambda function's handler
     code: lambda.Code.fromAsset('lambda-fns'),
     memorySize: 1024

@@ -58,9 +58,9 @@ export class CdkProductsStack extends cdk.Stack {
 
     // Create the Lambda function
     const productLambda = new lambda.Function(this, 'ProductHandler', {
-      runtime: lambda.Runtime.NODEJS_20_X, // Update to a supported runtime
+      runtime: lambda.Runtime.NODEJS_18_X, // Update to a supported runtime
       handler: 'main.handler', // Ensure this matches your Lambda function's handler
-      code: lambda.Code.fromAsset('lambda-fns'), // Ensure this path is correct
+      code: lambda.Code.fromAsset('lambda-fns/product-function'), // Ensure this path is correct
       memorySize: 1024,
     });
 
