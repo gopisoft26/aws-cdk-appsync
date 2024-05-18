@@ -1,4 +1,5 @@
-const ddb = require("@aws-cdk/aws-dynamodb");
+const AWS = require('aws-sdk');
+const ddb = new AWS.DynamoDB.DocumentClient();
 async function getProductById(productId: string) {
     const params = {
         TableName: process.env.PRODUCT_TABLE,

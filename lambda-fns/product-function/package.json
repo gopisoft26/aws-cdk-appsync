@@ -1,0 +1,22 @@
+{
+  "name": "product-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./main.d.ts",
+  "dependencies": {
+    "@aws-cdk/aws-appsync": "^1.204.0",
+    "@aws-cdk/aws-cognito": "^1.204.0",
+    "@aws-cdk/aws-dynamodb": "^1.204.0",
+    "@aws-cdk/aws-lambda": "^1.204.0",
+    "@aws-sdk/client-dynamodb": "^3.577.0",
+    "@aws-sdk/lib-dynamodb": "^3.577.0",
+    "aws-sdk": "^2.1623.0"
+  }
+}

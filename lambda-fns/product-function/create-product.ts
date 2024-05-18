@@ -1,5 +1,6 @@
 import { Product } from "./product"
-const ddb = require("@aws-cdk/aws-dynamodb");
+const AWS = require('aws-sdk');
+const ddb = new AWS.DynamoDB.DocumentClient();
 
 async function createProduct(product: Product) {
     if (!product.id) {
