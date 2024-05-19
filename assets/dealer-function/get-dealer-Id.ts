@@ -1,9 +1,9 @@
 const AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB.DocumentClient();
-async function getProductById(productId: string) {
+async function getDealerById(dealerId: string) {
     const params = {
-        TableName: process.env.PRODUCT_TABLE,
-        Key: { id: productId }
+        TableName: process.env.DEALER_TABLE,
+        Key: { id: dealerId }
     }
     try {
         const { Item } = await ddb.get(params).promise()
@@ -13,4 +13,4 @@ async function getProductById(productId: string) {
     }
 }
 
-export default getProductById
+export default getDealerById

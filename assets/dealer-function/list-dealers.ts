@@ -1,9 +1,9 @@
 const AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB.DocumentClient();
 
-async function listProducts() {
+async function listDealers() {
   const params = {
-      TableName: process.env.PRODUCT_TABLE,
+      TableName: process.env.DEALER_TABLE,
   }
   try {
       const data = await ddb.scan(params).promise()
@@ -14,4 +14,4 @@ async function listProducts() {
   }
 }
 
-export default listProducts
+export default listDealers
