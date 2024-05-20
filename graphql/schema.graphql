@@ -18,18 +18,20 @@ input DealerInput {
   address:String!
 }
 
-type Response {
-  message:String!
+type DeleteResponse  @aws_api_key @aws_cognito_user_pools {
+  success: Boolean!
+  message: String
 }
 
 type Query {
   getDealerById(dealerId: ID!): Dealer
     @aws_api_key @aws_cognito_user_pools
   listDealers: [Dealer]
-    @aws_api_key @aws_cognito_user_pools
+    @aws_api_key
 }
 
 type Mutation {
   createDealer(dealer: DealerInput!): Dealer
-  deleteByDealerId(dealerId:ID!):Response
+  deleteByDealerId(dealerId:ID!): DeleteResponse
+    @aws_api_key @aws_cognito_user_pools
 }

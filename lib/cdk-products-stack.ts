@@ -28,8 +28,9 @@ export class CdkProductsStack extends cdk.Stack {
       },
     });
 
-    new cognito.UserPoolClient(this, 'UserPoolClient', {
-      userPool,
+     // Create Cognito User Pool Client
+     const userPoolClient = new cognito.UserPoolClient(this, 'UserPoolClient', {
+      userPool
     });
 
     // 2. Create new AppSync API
@@ -71,8 +72,6 @@ export class CdkProductsStack extends cdk.Stack {
     // Models Feature
     // Inventory
     // Used Cars
-     
-            
 
     new cdk.CfnOutput(this, 'GraphQLAPIURL', {
       value: api.graphqlUrl,
@@ -81,7 +80,6 @@ export class CdkProductsStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'GraphQLAPIKey', {
       value: api.apiKey || '',
     });
-
 
   }
 }
